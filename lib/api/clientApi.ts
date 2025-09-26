@@ -27,5 +27,9 @@ async function fetchCars(params?: FetchCarsParams): Promise<FetchCarsResponse> {
   const { data } = await api.get<FetchCarsResponse>("/cars", { params });
   return data;
 }
+async function getBrands(): Promise<string[]> {
+  const { data } = await api.get<string[]>("/brands");
+  return data;
+}
 
-export { fetchCars };
+export { fetchCars, getBrands };

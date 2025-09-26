@@ -3,7 +3,9 @@ import CarList from "@/components/CarList/CarList";
 import css from "./catalog.module.css";
 import { fetchCars } from "@/lib/api/clientApi";
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
-import { useState } from "react";
+import BrandSelect from "@/components/CatalogFilter/BrandSelect/BrandSelect";
+import PriceSelect from "@/components/CatalogFilter/PriceSelect/PriceSelect";
+import MileageSelect from "@/components/CatalogFilter/MileageSelect/Mileage";
 
 export default function ClientCatalog() {
   //   const { params, setParams } = useState();
@@ -16,5 +18,12 @@ export default function ClientCatalog() {
 
   const cars = data?.cars ?? [];
 
-  return <CarList cars={cars} />;
+  return (
+    <>
+      <BrandSelect />
+      <PriceSelect />
+      <MileageSelect />
+      <CarList cars={cars} />;
+    </>
+  );
 }

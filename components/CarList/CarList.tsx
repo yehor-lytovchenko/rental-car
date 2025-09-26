@@ -6,8 +6,6 @@ interface CarListProps {
 }
 
 export default function CarList({ cars }: CarListProps) {
-  console.log(cars);
-
   return (
     <ul>
       {cars.map((car) => (
