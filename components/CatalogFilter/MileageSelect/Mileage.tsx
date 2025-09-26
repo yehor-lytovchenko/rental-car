@@ -1,9 +1,9 @@
 "use client";
-import { useState } from "react";
+import { useFilterStore } from "@/lib/store/carsStore";
 
 export default function MileageSelect() {
-  const [fromMileage, setFromMileage] = useState("");
-  const [toMileage, setToMileage] = useState("");
+  const { minMileage, setMinMileage, maxMileage, setMaxMileage } =
+    useFilterStore();
 
   return (
     <div>
@@ -12,15 +12,15 @@ export default function MileageSelect() {
         <input
           type="number"
           placeholder="From"
-          value={fromMileage}
-          onChange={(e) => setFromMileage(e.target.value)}
+          value={minMileage}
+          onChange={(e) => setMinMileage(e.target.value)}
           min="0"
         />
         <input
           type="number"
           placeholder="To"
-          value={toMileage}
-          onChange={(e) => setToMileage(e.target.value)}
+          value={maxMileage}
+          onChange={(e) => setMaxMileage(e.target.value)}
           min="0"
         />
       </div>

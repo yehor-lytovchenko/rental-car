@@ -1,15 +1,11 @@
 "use client";
-import { useState } from "react";
 import Select, { SingleValue } from "react-select";
 import css from "./PriceSelect.module.css";
-
-interface OptionType {
-  value: string;
-  label: string;
-}
+import { OptionType } from "@/types/options";
+import { useFilterStore } from "@/lib/store/carsStore";
 
 export default function PriceSelect() {
-  const [selectedOption, setSelectedOption] = useState<OptionType | null>(null);
+  const { rentalPrice, setRentalPrice } = useFilterStore();
 
   const options = [
     { value: "30", label: "30" },
@@ -21,8 +17,11 @@ export default function PriceSelect() {
   ];
 
   const handleChange = (selectedOption: SingleValue<OptionType>) => {
-    setSelectedOption(selectedOption);
+    setRentalPrice(selectedOption ? selectedOption.value : "");
   };
+
+  const selectedOption =
+    options.find((option) => option.value === rentalPrice) || null;
 
   return (
     <Select value={selectedOption} options={options} onChange={handleChange} />

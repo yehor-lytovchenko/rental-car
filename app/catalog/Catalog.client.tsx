@@ -18,12 +18,17 @@ export default function ClientCatalog() {
 
   const cars = data?.cars ?? [];
 
+  const handleSubmit = () => {};
+
   return (
     <>
-      <BrandSelect />
-      <PriceSelect />
-      <MileageSelect />
-      <CarList cars={cars} />;
+      <form onSubmit={handleSubmit}>
+        <BrandSelect />
+        <PriceSelect />
+        <MileageSelect />
+        <button type="submit">Search</button>
+        <CarList cars={cars} />
+      </form>
     </>
   );
 }

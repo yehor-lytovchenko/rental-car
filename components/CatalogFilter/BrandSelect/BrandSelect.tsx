@@ -3,22 +3,18 @@ import { getBrands } from "@/lib/api/clientApi";
 import { useState, useEffect } from "react";
 import Select, { SingleValue } from "react-select";
 import css from "./BrandSelect.module.css";
-
-interface OptionType {
-  value: string;
-  label: string;
-}
+import { useFilterStore } from "@/lib/store/carsStore";
+import { OptionType } from "@/types/options";
 
 export default function BrandSelect() {
   const [brands, setBrands] = useState<string[]>([]);
-  const [selectedOption, setSelectedOption] = useState<OptionType | null>(null);
+  const { brand, setBrand } = useFilterStore();
 
   useEffect(() => {
     async function fetchData() {
       const data = await getBrands();
       setBrands(data);
     }
-
     fetchData();
   }, []);
 
@@ -28,8 +24,11 @@ export default function BrandSelect() {
   }));
 
   const handleChange = (selectedOption: SingleValue<OptionType>) => {
-    setSelectedOption(selectedOption);
+    setBrand(selectedOption ? selectedOption.value : "");
   };
+
+  const selectedOption =
+    options.find((option) => option.value === brand) || null;
 
   return (
     <Select value={selectedOption} options={options} onChange={handleChange} />

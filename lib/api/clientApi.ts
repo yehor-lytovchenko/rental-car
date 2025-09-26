@@ -14,17 +14,15 @@ interface FetchCarsResponse {
 
 export const api = axios.create({
   baseURL: "https://car-rental-api.goit.global",
-  params: {
-    limit: 12,
-    brand: "",
-    rentalPrice: "",
-    minMileage: "",
-    maxMileage: "",
-  },
 });
 
 async function fetchCars(params?: FetchCarsParams): Promise<FetchCarsResponse> {
-  const { data } = await api.get<FetchCarsResponse>("/cars", { params });
+  const { data } = await api.get<FetchCarsResponse>("/cars", {
+    params: {
+      limit: 12,
+      ...params,
+    },
+  });
   return data;
 }
 async function getBrands(): Promise<string[]> {
