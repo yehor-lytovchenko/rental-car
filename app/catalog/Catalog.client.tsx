@@ -2,7 +2,7 @@
 import CarList from "@/components/CarList/CarList";
 import css from "./catalog.module.css";
 import { fetchCars } from "@/lib/api/clientApi";
-import { keepPreviousData, useQuery } from "@tanstack/react-query";
+import { useInfiniteQuery } from "@tanstack/react-query";
 import BrandSelect from "@/components/CatalogFilter/BrandSelect/BrandSelect";
 import PriceSelect from "@/components/CatalogFilter/PriceSelect/PriceSelect";
 import MileageSelect from "@/components/CatalogFilter/MileageSelect/Mileage";
@@ -24,13 +24,24 @@ export default function ClientCatalog() {
     [brand, rentalPrice, minMileage, maxMileage]
   );
 
-  const { data, isError, isLoading } = useQuery({
+  const {
+    data,
+    isError,
+    isLoading,
+    fetchNextPage,
+    hasNextPage,
+    isFetchingNextPage,
+  } = useInfiniteQuery({
     queryKey: ["cars", submittedFilters],
-    queryFn: () => fetchCars(submittedFilters),
-    placeholderData: keepPreviousData,
+    queryFn: ({ pageParam = 1 }) =>
+      fetchCars({ ...submittedFilters, page: String(pageParam) }),
+    getNextPageParam: (lastPage, allPages) => {
+      return lastPage.cars.length === 12 ? allPages.length + 1 : undefined;
+    },
+    initialPageParam: 1,
   });
 
-  const cars = data?.cars ?? [];
+  const cars = data?.pages.flatMap((page) => page.cars) ?? [];
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -47,8 +58,13 @@ export default function ClientCatalog() {
         <PriceSelect />
         <MileageSelect />
         <button type="submit">Search</button>
-        <CarList cars={cars} />
       </form>
+      <CarList cars={cars} />
+      {hasNextPage && (
+        <button onClick={() => fetchNextPage()} disabled={isFetchingNextPage}>
+          {isFetchingNextPage ? "Loading..." : "Load more"}
+        </button>
+      )}
     </>
   );
 }

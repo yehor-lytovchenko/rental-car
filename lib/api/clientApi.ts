@@ -6,6 +6,7 @@ interface FetchCarsParams {
   rentalPrice?: string;
   minMileage?: string;
   maxMileage?: string;
+  page?: string;
 }
 
 interface FetchCarsResponse {
