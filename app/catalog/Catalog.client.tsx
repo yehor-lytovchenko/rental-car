@@ -6,19 +6,39 @@ import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import BrandSelect from "@/components/CatalogFilter/BrandSelect/BrandSelect";
 import PriceSelect from "@/components/CatalogFilter/PriceSelect/PriceSelect";
 import MileageSelect from "@/components/CatalogFilter/MileageSelect/Mileage";
+import { useFilterStore } from "@/lib/store/carsStore";
+import { useState, useMemo } from "react";
 
 export default function ClientCatalog() {
-  //   const { params, setParams } = useState();
+  const [submittedFilters, setSubmittedFilters] = useState({});
 
-  const { data, isError } = useQuery({
-    queryKey: ["cars"],
-    queryFn: () => fetchCars(),
+  const { brand, rentalPrice, minMileage, maxMileage } = useFilterStore();
+
+  const formFilters = useMemo(
+    () => ({
+      brand,
+      rentalPrice,
+      minMileage,
+      maxMileage,
+    }),
+    [brand, rentalPrice, minMileage, maxMileage]
+  );
+
+  const { data, isError, isLoading } = useQuery({
+    queryKey: ["cars", submittedFilters],
+    queryFn: () => fetchCars(submittedFilters),
     placeholderData: keepPreviousData,
   });
 
   const cars = data?.cars ?? [];
 
-  const handleSubmit = () => {};
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setSubmittedFilters(formFilters);
+  };
+
+  if (isLoading) return <div>Loading...</div>;
+  if (isError) return <div>Something went wrong.</div>;
 
   return (
     <>
