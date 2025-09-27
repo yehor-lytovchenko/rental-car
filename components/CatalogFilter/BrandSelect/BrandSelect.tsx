@@ -31,6 +31,11 @@ export default function BrandSelect() {
     options.find((option) => option.value === brand) || null;
 
   return (
-    <Select value={selectedOption} options={options} onChange={handleChange} />
+    <Select
+      value={selectedOption}
+      options={options}
+      onChange={handleChange}
+      placeholder="Choose a brand"
+    />
   );
 }

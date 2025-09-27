@@ -10,9 +10,7 @@ export default function CarForm() {
     clearDraft();
   };
   const handleChange = (
-    e: React.ChangeEvent<
-      HTMLSelectElement | HTMLInputElement | HTMLTextAreaElement
-    >
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setDraft({
       ...draft,

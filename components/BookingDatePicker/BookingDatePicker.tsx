@@ -1,14 +1,25 @@
 "use client";
-import { useState } from "react";
+import { useFormDraftStore } from "@/lib/store/formStore";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 export default function BookingDatePicker() {
-  const [selectedDate, setSelectedDate] = useState<Date>(new Date());
+  const { draft, setDraft } = useFormDraftStore();
 
-  const handleDateChange = () => {
-    // setSelectedDate(date);
+  const handleDateChange = (date: Date | null) => {
+    if (date) {
+      const formattedDate = date.toLocaleDateString("uk-UA");
+
+      setDraft({
+        ...draft,
+        userDate: formattedDate,
+      });
+    }
   };
+
+  const selectedDate = draft.userDate
+    ? new Date(draft.userDate.split(".").reverse().join("-"))
+    : new Date();
 
   return (
     <DatePicker
@@ -16,6 +27,7 @@ export default function BookingDatePicker() {
       onChange={handleDateChange}
       dateFormat="dd.MM.yyyy"
       minDate={new Date()}
+      placeholderText="Select date"
     />
   );
 }
