@@ -12,9 +12,10 @@ const initialDraft: CarForm = {
   userName: "",
   userEmail: "",
   userText: "",
+  userDate: "",
 };
 
-export const useNoteDraftStore = create<FormDraftStore>()(
+export const useFormDraftStore = create<FormDraftStore>()(
   persist(
     (set) => ({
       draft: initialDraft,
