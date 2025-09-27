@@ -1,5 +1,6 @@
 import { Cars } from "@/types/cars";
 import Image from "next/image";
+import Link from "next/link";
 
 interface CarListProps {
   cars: Cars[];
@@ -38,7 +39,7 @@ export default function CarList({ cars }: CarListProps) {
               </li>
             </ul>
 
-            <button>Read more</button>
+            <Link href={`/catalog/${car.id}`}>Read more</Link>
           </div>
         </li>
       ))}
