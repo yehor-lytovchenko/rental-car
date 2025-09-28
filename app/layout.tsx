@@ -6,7 +6,6 @@ import { Manrope } from "next/font/google";
 
 interface RootLayoutProps {
   children: React.ReactNode;
-  modal: React.ReactNode;
 }
 
 const manrope = Manrope({
