@@ -1,0 +1,17 @@
+.date {
+    border-radius: 12px;
+    padding: 12px 20px;
+    width: 576px;
+    height: 48px;
+    background: #f7f7f7;
+    margin-bottom: 16px;
+    border: none;
+}
+
+.date::placeholder {
+    font-family: "Manrope", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 125%;
+    color: #8d929a;
+}

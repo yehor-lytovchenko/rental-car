@@ -1,10 +1,13 @@
+import Container from "@/components/Container/Container";
 import ClientCatalog from "./Catalog.client";
-import css from "./catalog.module.css";
+import Section from "@/components/Section/Section";
 
 export default function Catalog() {
   return (
-    <>
-      <ClientCatalog />;
-    </>
+    <Section>
+      <Container>
+        <ClientCatalog />
+      </Container>
+    </Section>
   );
 }

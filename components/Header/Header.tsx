@@ -8,7 +8,13 @@ export default function Header() {
     <Container>
       <div className={css.wrapper}>
         <Link href="/">
-          <Image src="/logo.svg" width={104} height={16} alt="Logo" priority />
+          <Image
+            src="/icons/logo.svg"
+            width={104}
+            height={16}
+            alt="Logo"
+            priority
+          />
         </Link>
         <nav>
           <ul className={css.list}>

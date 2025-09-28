@@ -4,6 +4,7 @@ import { fetchCarById } from "@/lib/api/clientApi";
 import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
 import { useParams } from "next/navigation";
+import css from "./CarDetails.module.css";
 
 export default function CarDeatailsClient() {
   const { id } = useParams<{ id: string }>();
@@ -21,57 +22,71 @@ export default function CarDeatailsClient() {
   if (car) {
     return (
       <>
-        <div className="main-container">
-          <div className="booking-section">
-            <h3>Book your car now</h3>
-            <p>Stay connected! We are always ready to help you.</p>
-            <CarForm />
+        <div className={css.container}>
+          <div className={css.carDetail}>
+            <Image
+              className={css.img}
+              src={car.img}
+              alt={car.brand}
+              width={640}
+              height={512}
+            />
+            <div className="booking-section">
+              <CarForm />
+            </div>
           </div>
-
-          <div className="car-details-section">
-            <div className="image-and-info-wrapper">
-              <Image src={car.img} alt={car.brand} width={640} height={512} />
-              <div className="info-details">
-                <h2>
-                  {car.brand} {car.model}, {car.year}
-                </h2>
-                <div className="location-mileage-id">
-                  <span>{car.address}</span>
-                  <span>Mileage: {car.mileage} km</span>
-                  <span>Id: 9582</span>
-                </div>
-                <h3>${car.rentalPrice}</h3>
-                <p>{car.description}</p>
+          <div className={css.wrapperInfo}>
+            <div className={css.infoCar}>
+              <h2 className={css.title}>
+                {car.brand} {car.model}, {car.year}
+              </h2>
+              <div className={css.address}>
+                <p className={css.addressDesc}>{car.address}</p>
+                <p className={css.addressDesc}>Mileage: {car.mileage} km</p>
               </div>
+              <h3 className={css.price}>${car.rentalPrice}</h3>
+              <p className={css.addressDesc}>{car.description}</p>
             </div>
 
-            <div className="rental-conditions">
-              <h4>Rental Conditions:</h4>
+            <div className={css.rental}>
+              <h4 className={css.infoTitle}>Rental Conditions:</h4>
               <ul>
                 {car.rentalConditions.map((condition, index) => (
-                  <li key={index}>{condition}</li>
+                  <li className={css.infoDetails} key={index}>
+                    {condition}
+                  </li>
                 ))}
               </ul>
             </div>
 
-            <div className="car-specifications">
-              <h4>Car Specifications:</h4>
+            <div className={css.specifications}>
+              <h4 className={css.infoTitle}>Car Specifications:</h4>
               <ul>
-                <li>Year: {car.year}</li>
-                <li>Type: {car.type}</li>
-                <li>Fuel Consumption: {car.fuelConsumption}</li>
-                <li>Engine Size: {car.engineSize}</li>
+                <li className={css.infoDetails}>Year: {car.year}</li>
+                <li className={css.infoDetails}>Type: {car.type}</li>
+                <li className={css.infoDetails}>
+                  Fuel Consumption: {car.fuelConsumption}
+                </li>
+                <li className={css.infoDetails}>
+                  Engine Size: {car.engineSize}
+                </li>
               </ul>
             </div>
 
             <div className="accessories">
-              <h4>Accessories and functionalities:</h4>
+              <h4 className={css.infoTitle}>
+                Accessories and functionalities:
+              </h4>
               <ul>
                 {car.accessories.map((accessory, index) => (
-                  <li key={index}>{accessory}</li>
+                  <li className={css.infoDetails} key={index}>
+                    {accessory}
+                  </li>
                 ))}
                 {car.functionalities.map((func, index) => (
-                  <li key={index}>{func}</li>
+                  <li className={css.infoDetails} key={index}>
+                    {func}
+                  </li>
                 ))}
               </ul>
             </div>

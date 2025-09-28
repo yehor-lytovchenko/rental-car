@@ -31,11 +31,39 @@ export default function BrandSelect() {
     options.find((option) => option.value === brand) || null;
 
   return (
-    <Select
-      value={selectedOption}
-      options={options}
-      onChange={handleChange}
-      placeholder="Choose a brand"
-    />
+    <span className={css.span}>
+      Car brand
+      <Select
+        className={css.select}
+        value={selectedOption}
+        options={options}
+        onChange={handleChange}
+        placeholder="Choose a brand"
+        styles={{
+          control: (provided) => ({
+            ...provided,
+            backgroundColor: "var(--inputs)",
+            border: "none",
+            borderRadius: "12px",
+            boxShadow: "none",
+          }),
+          placeholder: (provided) => ({
+            ...provided,
+            color: "var(--main)",
+          }),
+          indicatorSeparator: () => ({
+            display: "none",
+          }),
+          dropdownIndicator: (provided, state) => ({
+            ...provided,
+            color: "var(--main)",
+            transform: state.selectProps.menuIsOpen
+              ? "rotate(180deg)"
+              : "rotate(0deg)",
+            transition: "transform 0.2s",
+          }),
+        }}
+      />
+    </span>
   );
 }

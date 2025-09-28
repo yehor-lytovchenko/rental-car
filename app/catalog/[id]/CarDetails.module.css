@@ -1,0 +1,75 @@
+.container {
+    display: flex;
+    padding-left: 120px;
+    padding-right: 120px;
+    padding-top: 84px;
+}
+
+.carDetail {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-right: 72px;
+}
+
+.img {
+    border-radius: 19px;
+    max-height: 512px;
+}
+
+.infoCar {
+    margin-bottom: 68px;
+}
+
+.rental {
+    margin-bottom: 110px;
+}
+
+.specifications {
+    margin-bottom: 110px;
+}
+
+.title {
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 133%;
+    color: #101828;
+    margin-bottom: 8px;
+}
+
+.address {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.addressDesc {
+    font-family: "Manrope", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 125%;
+    color: #101828;
+}
+
+.price {
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 133%;
+    color: #3470ff;
+    margin-bottom: 32px;
+}
+
+.infoTitle {
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 120%;
+    color: #101828;
+    margin-bottom: 20px;
+}
+
+.infoDetails {
+    margin-bottom: 16px;
+}

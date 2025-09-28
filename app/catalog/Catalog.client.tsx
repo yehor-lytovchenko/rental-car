@@ -53,15 +53,24 @@ export default function ClientCatalog() {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <BrandSelect />
-        <PriceSelect />
-        <MileageSelect />
-        <button type="submit">Search</button>
+      <form onSubmit={handleSubmit} className={css.form}>
+        <div className={css.input}>
+          <BrandSelect />
+          <PriceSelect />
+          <MileageSelect />
+
+          <button type="submit" className={css.button}>
+            Search
+          </button>
+        </div>
       </form>
       <CarList cars={cars} />
       {hasNextPage && (
-        <button onClick={() => fetchNextPage()} disabled={isFetchingNextPage}>
+        <button
+          className={css.buttonLoadMore}
+          onClick={() => fetchNextPage()}
+          disabled={isFetchingNextPage}
+        >
           {isFetchingNextPage ? "Loading..." : "Load more"}
         </button>
       )}

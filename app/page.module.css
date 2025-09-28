@@ -1,6 +1,80 @@
-.image {
-    margin-right: auto;
-    margin-left: auto;
+.heroSection {
+    position: relative;
+    width: 100%;
+    height: 700px;
+    overflow: hidden;
+    padding-bottom: 60px;
 }
 
-.wrapper {}
+.heroImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.backgroundImage {
+    object-fit: cover;
+    object-position: center;
+}
+
+.heroContent {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    height: 100%;
+
+
+}
+
+.textWrapper {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.heroTitle {
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 120%;
+    text-align: center;
+    color: var(--white);
+}
+
+.heroSubtitle {
+
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 133%;
+    text-align: center;
+    color: var(--white);
+}
+
+.button {
+    margin-top: 40px;
+    display: inline-block;
+    background: var(--button);
+    padding: 12px 99px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+
+    text-align: center;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 125%;
+    color: var(--white);
+}
+
+.button:hover {
+    background: var(--button-hover);
+    transform: translateY(-2px);
+
+}

@@ -1,0 +1,100 @@
+.bookingForm {
+    border: 1px solid #dadde1;
+    border-radius: 10px;
+    padding: 32px;
+    width: 640px;
+    height: 488px;
+}
+
+.title {
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 120%;
+    color: #101828;
+    margin-bottom: 8px;
+}
+
+.descr {
+    font-family: "Manrope", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 125%;
+    color: #8d929a;
+    margin-bottom: 24px;
+}
+
+.input {
+    border-radius: 12px;
+    padding: 12px 20px;
+    width: 576px;
+    height: 48px;
+    background: #f7f7f7;
+    margin-bottom: 16px;
+    border: none;
+}
+
+.input:hover,
+.input:focus {
+    border: #3470ff;
+}
+
+.input::placeholder {
+    font-family: "Manrope", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 125%;
+    color: #8d929a;
+}
+
+.inputArea {
+    border-radius: 12px;
+    padding: 12px 20px 56px;
+    width: 576px;
+    height: 88px;
+    border: none;
+    background: #f7f7f7;
+    margin-bottom: 24px;
+}
+
+.inputArea:hover,
+.inputArea:focus,
+.inputArea:active {
+    border-color: #3470ff;
+}
+
+.inputArea::placeholder {
+    font-family: "Manrope", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 125%;
+    color: #8d929a;
+}
+
+.button {
+    border-radius: 12px;
+    padding: 12px 51px;
+    width: 156px;
+    height: 44px;
+    background: #3470ff;
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 125%;
+    color: #fff;
+    margin-left: 210px;
+    margin-right: 210px;
+    transition: background 0.2s ease;
+}
+
+.button:hover,
+.button:focus {
+    background: #3653d9;
+}
+
+.error {
+    font-family: "Manrope", sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    color: darkred;
+}

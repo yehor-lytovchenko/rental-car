@@ -1,0 +1,12 @@
+.span {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 133%;
+    color: var(--gray);
+}
+
+.select {
+    border-radius: 12px;
+    width: 196px;
+    height: 44px;
+}

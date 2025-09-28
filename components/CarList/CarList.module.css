@@ -1,0 +1,81 @@
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 80px;
+}
+
+.listItem {
+    max-width: 276px;
+}
+
+.img {
+    border-radius: 14px;
+}
+
+.heartIcon {
+    fill: var(--button);
+
+}
+
+.description {
+    margin-bottom: 28px;
+}
+
+.titlePrice {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.span {
+    color: var(--button);
+}
+
+.descTitle {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 125%;
+    color: var(--main);
+}
+
+.info {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 133%;
+    color: var(--gray);
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+    border-radius: 12px;
+    height: 44px;
+    background: var(--button);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 125%;
+    color: var(--white);
+}
+
+.button:hover {
+    background: var(--button-hover);
+
+}
+
+.imageWrapper {
+    position: relative;
+
+}
+
+.heartIconWrapper {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 10;
+    cursor: pointer;
+}

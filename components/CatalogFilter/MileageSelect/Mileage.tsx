@@ -27,15 +27,15 @@ export default function MileageSelect() {
   };
 
   return (
-    <div className={css.container}>
-      <label className={css.label}>Car mileage / km</label>
-      <div className={css.inputGroup}>
+    <span className={css.span}>
+      Car mileage / km
+      <div className={css.inputs}>
         <div className={css.inputWrapper}>
           <input
             type="text"
             value={formatNumber(minMileage)}
             onChange={handleMinMileageChange}
-            className={css.input}
+            className={css.inputMin}
           />
           <label className={css.floatingLabel}>From</label>
         </div>
@@ -44,11 +44,11 @@ export default function MileageSelect() {
             type="text"
             value={formatNumber(maxMileage)}
             onChange={handleMaxMileageChange}
-            className={css.input}
+            className={css.inputMax}
           />
           <label className={css.floatingLabel}>To</label>
         </div>
       </div>
-    </div>
+    </span>
   );
 }

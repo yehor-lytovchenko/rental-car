@@ -1,0 +1,50 @@
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.input {
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+    margin-bottom: 56px;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    width: 156px;
+    height: 44px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 125%;
+    color: var(--white);
+    background: var(--button);
+}
+
+.button:hover {
+    background-color: var(--button-hover);
+}
+
+.buttonLoadMore {
+    display: block;
+    border: 1px solid var(--button);
+    background-color: var(--white);
+    border-radius: 12px;
+    width: 156px;
+    height: 44px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 125%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.buttonLoadMore:hover {
+    border-color: var(--button-hover)
+}

@@ -24,14 +24,42 @@ export default function PriceSelect() {
     options.find((option) => option.value === rentalPrice) || null;
 
   return (
-    <Select
-      value={selectedOption}
-      options={options}
-      onChange={handleChange}
-      placeholder="Choose a price"
-      formatOptionLabel={(option, { context }) =>
-        context === "value" ? `To ${option.label}` : option.label
-      }
-    />
+    <span className={css.span}>
+      Price / 1 hour
+      <Select
+        className={css.select}
+        value={selectedOption}
+        options={options}
+        onChange={handleChange}
+        placeholder="Choose a price"
+        formatOptionLabel={(option, { context }) =>
+          context === "value" ? `To ${option.label}` : option.label
+        }
+        styles={{
+          control: (provided) => ({
+            ...provided,
+            backgroundColor: "var(--inputs)",
+            border: "none",
+            borderRadius: "12px",
+            boxShadow: "none",
+          }),
+          placeholder: (provided) => ({
+            ...provided,
+            color: "var(--main)",
+          }),
+          indicatorSeparator: () => ({
+            display: "none",
+          }),
+          dropdownIndicator: (provided, state) => ({
+            ...provided,
+            color: "var(--main)",
+            transform: state.selectProps.menuIsOpen
+              ? "rotate(180deg)"
+              : "rotate(0deg)",
+            transition: "transform 0.2s",
+          }),
+        }}
+      />
+    </span>
   );
 }

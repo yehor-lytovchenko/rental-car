@@ -24,7 +24,6 @@ export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
           <Header />
           {children}
         </TanStackProvider>
-        ;
       </body>
     </html>
   );

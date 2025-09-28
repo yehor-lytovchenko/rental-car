@@ -2,6 +2,7 @@
 import { useFormDraftStore } from "@/lib/store/formStore";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import css from "./BookingDatePicker.module.css";
 
 export default function BookingDatePicker() {
   const { draft, setDraft } = useFormDraftStore();
@@ -23,6 +24,7 @@ export default function BookingDatePicker() {
 
   return (
     <DatePicker
+      className={css.date}
       selected={selectedDate}
       onChange={handleDateChange}
       dateFormat="dd.MM.yyyy"
