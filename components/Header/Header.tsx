@@ -22,7 +22,7 @@ export default function Header() {
         </Link>
         <nav>
           <ul className={css.list}>
-            <li>
+            <li className={css.item}>
               <Link
                 href="/"
                 className={`${css.link} ${pathname === "/" ? css.active : ""}`}
@@ -30,7 +30,7 @@ export default function Header() {
                 Home
               </Link>
             </li>
-            <li>
+            <li className={css.item}>
               <Link
                 href="/catalog"
                 className={`${css.link} ${
