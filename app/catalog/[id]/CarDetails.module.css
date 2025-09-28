@@ -1,8 +1,6 @@
 .container {
     display: flex;
-    padding-left: 120px;
-    padding-right: 120px;
-    padding-top: 84px;
+
 }
 
 .carDetail {
@@ -30,11 +28,10 @@
 }
 
 .title {
-    font-family: "Manrope", sans-serif;
     font-weight: 600;
     font-size: 24px;
     line-height: 133%;
-    color: #101828;
+    color: var(--main);
     margin-bottom: 8px;
 }
 
@@ -45,31 +42,32 @@
 }
 
 .addressDesc {
-    font-family: "Manrope", sans-serif;
     font-weight: 500;
     font-size: 16px;
     line-height: 125%;
-    color: #101828;
+    color: var(--main);
 }
 
 .price {
-    font-family: "Manrope", sans-serif;
     font-weight: 600;
     font-size: 24px;
     line-height: 133%;
-    color: #3470ff;
+    color: var(--button);
     margin-bottom: 32px;
 }
 
 .infoTitle {
-    font-family: "Manrope", sans-serif;
     font-weight: 600;
     font-size: 20px;
     line-height: 120%;
-    color: #101828;
+    color: var(--main);
     margin-bottom: 20px;
 }
 
 .infoDetails {
     margin-bottom: 16px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 125%;
+    color: var(--main);
 }

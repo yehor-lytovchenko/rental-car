@@ -1,36 +1,152 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚗 Rental Car
 
-## Getting Started
+A modern, responsive car rental platform built with Next.js, designed to provide users with a seamless experience for finding and booking rental cars.
 
-First, run the development server:
+## 🌐 Live Demo
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+**[View Live Site](https://rental-car-mu-peach.vercel.app/)**
+
+## ✨ Features
+
+- **🎨 Modern UI/UX** - Clean, responsive design with smooth animations
+- **🔍 Advanced Search** - Filter cars by brand, model, price, and availability
+- **📱 Fully Responsive** - Optimized for desktop, tablet, and mobile devices
+- **⚡ Fast Performance** - Built with Next.js for optimal loading speeds
+- **🎯 User-Friendly** - Intuitive navigation and car selection process
+- **💫 Interactive Elements** - Smooth transitions and hover effects
+
+## 🛠️ Tech Stack
+
+- **Framework:** [Next.js 14](https://nextjs.org/) (App Router)
+- **Language:** [TypeScript](https://www.typescriptlang.org/)
+- **Styling:** CSS Modules + Custom CSS
+- **Font:** [Geist Font Family](https://vercel.com/font)
+- **Deployment:** [Vercel](https://vercel.com/)
+- **Package Manager:** npm
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18.0 or later
+- npm, yarn, pnpm, or bun
+
+### Installation
+
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/yehor-lytovchenko/rental-car.git
+   cd rental-car
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   ```
+
+3. **Run the development server**
+
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   # or
+   bun dev
+   ```
+
+4. **Open your browser**
+
+   Navigate to [http://localhost:3000](http://localhost:3000) to see the application.
+
+## 📂 Project Structure
+
+```
+rental-car/
+├── src/
+│   ├── app/                 # App Router pages
+│   ├── components/          # Reusable UI components
+│   ├── styles/             # CSS modules and global styles
+│   └── lib/                # Utility functions and configurations
+├── public/                 # Static assets (images, icons, etc.)
+├── next.config.js          # Next.js configuration
+├── package.json            # Project dependencies
+└── README.md              # Project documentation
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🎯 Key Pages
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **🏠 Home** - Landing page with hero section and key features
+- **📋 Catalog** - Browse and filter available rental cars
+- **🚙 Car Details** - Detailed view of individual cars
+- **📞 Contact** - Get in touch for inquiries
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🔧 Development
 
-## Learn More
+### Available Scripts
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run dev      # Start development server
+npm run build    # Create production build
+npm run start    # Start production server
+npm run lint     # Run ESLint
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Code Style
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- TypeScript for type safety
+- CSS Modules for component-scoped styling
+- ESLint for code quality
+- Responsive design principles
 
-## Deploy on Vercel
+## 🚀 Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The application is automatically deployed to Vercel. Any push to the main branch triggers a new deployment.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Manual Deployment
+
+1. **Build the project**
+
+   ```bash
+   npm run build
+   ```
+
+2. **Deploy to Vercel**
+   ```bash
+   vercel --prod
+   ```
+
+## 🤝 Contributing
+
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 👨‍💻 Author
+
+**Yehor Lytovchenko**
+
+- GitHub: [@yehor-lytovchenko](https://github.com/yehor-lytovchenko)
+
+## 🙏 Acknowledgments
+
+- [Next.js](https://nextjs.org/) for the amazing React framework
+- [Vercel](https://vercel.com/) for seamless deployment
+- [Geist Font](https://vercel.com/font) for beautiful typography
+
+---
+
+⭐ **Star this repository if you found it helpful!**

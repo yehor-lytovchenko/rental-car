@@ -12,7 +12,7 @@ const initialDraft: CarForm = {
   userName: "",
   userEmail: "",
   userText: "",
-  userDate: "",
+  userDate: null,
 };
 
 export const useFormDraftStore = create<FormDraftStore>()(

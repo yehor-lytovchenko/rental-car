@@ -62,6 +62,10 @@ export default function BrandSelect() {
               : "rotate(0deg)",
             transition: "transform 0.2s",
           }),
+          menu: (provided) => ({
+            ...provided,
+            zIndex: 9999,
+          }),
         }}
       />
     </span>

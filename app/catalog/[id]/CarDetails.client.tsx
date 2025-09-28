@@ -5,6 +5,10 @@ import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
 import { useParams } from "next/navigation";
 import css from "./CarDetails.module.css";
+import { IoLocationOutline } from "react-icons/io5";
+import { FaCheck, FaRegCheckCircle } from "react-icons/fa";
+import { BsCalendarWeek, BsCarFront, BsFuelPump } from "react-icons/bs";
+import { GoGear } from "react-icons/go";
 
 export default function CarDeatailsClient() {
   const { id } = useParams<{ id: string }>();
@@ -41,7 +45,10 @@ export default function CarDeatailsClient() {
                 {car.brand} {car.model}, {car.year}
               </h2>
               <div className={css.address}>
-                <p className={css.addressDesc}>{car.address}</p>
+                <p className={css.addressDesc}>
+                  <IoLocationOutline />
+                  {car.address}
+                </p>
                 <p className={css.addressDesc}>Mileage: {car.mileage} km</p>
               </div>
               <h3 className={css.price}>${car.rentalPrice}</h3>
@@ -53,7 +60,7 @@ export default function CarDeatailsClient() {
               <ul>
                 {car.rentalConditions.map((condition, index) => (
                   <li className={css.infoDetails} key={index}>
-                    {condition}
+                    <FaRegCheckCircle /> {condition}
                   </li>
                 ))}
               </ul>
@@ -62,12 +69,18 @@ export default function CarDeatailsClient() {
             <div className={css.specifications}>
               <h4 className={css.infoTitle}>Car Specifications:</h4>
               <ul>
-                <li className={css.infoDetails}>Year: {car.year}</li>
-                <li className={css.infoDetails}>Type: {car.type}</li>
                 <li className={css.infoDetails}>
+                  <BsCalendarWeek /> Year: {car.year}
+                </li>
+                <li className={css.infoDetails}>
+                  <BsCarFront /> Type: {car.type}
+                </li>
+                <li className={css.infoDetails}>
+                  <BsFuelPump />
                   Fuel Consumption: {car.fuelConsumption}
                 </li>
                 <li className={css.infoDetails}>
+                  <GoGear />
                   Engine Size: {car.engineSize}
                 </li>
               </ul>
@@ -80,12 +93,12 @@ export default function CarDeatailsClient() {
               <ul>
                 {car.accessories.map((accessory, index) => (
                   <li className={css.infoDetails} key={index}>
-                    {accessory}
+                    <FaRegCheckCircle /> {accessory}
                   </li>
                 ))}
                 {car.functionalities.map((func, index) => (
                   <li className={css.infoDetails} key={index}>
-                    {func}
+                    <FaRegCheckCircle /> {func}
                   </li>
                 ))}
               </ul>

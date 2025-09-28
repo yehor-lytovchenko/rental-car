@@ -20,7 +20,7 @@ export default function BookingDatePicker() {
 
   const selectedDate = draft.userDate
     ? new Date(draft.userDate.split(".").reverse().join("-"))
-    : new Date();
+    : null;
 
   return (
     <DatePicker
@@ -29,7 +29,7 @@ export default function BookingDatePicker() {
       onChange={handleDateChange}
       dateFormat="dd.MM.yyyy"
       minDate={new Date()}
-      placeholderText="Select date"
+      placeholderText="Booking date"
     />
   );
 }
