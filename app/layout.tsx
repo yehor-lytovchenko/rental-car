@@ -11,7 +11,7 @@ interface RootLayoutProps {
 const manrope = Manrope({
   variable: "--font-manrope",
   display: "swap",
-  weight: ["700"],
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
 });
 
